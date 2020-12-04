@@ -20,15 +20,13 @@
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
-              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-braille"></i></span>
-
-              <div class="info-box-content">
-                <span class="info-box-text">Total Products</span>
-                <span class="info-box-number">
-                  1012
-                  <small></small>
-                </span>
+              <span class="info-box-icon bg-info elevation-1"><i class="fas fa-coins"></i></span>
+				
+			  <div class="info-box-content">
+                <span class="info-box-text">Total Limit</span>
+                <span class="info-box-number">50000</span>
               </div>
+              
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
@@ -56,8 +54,8 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Total Limit</span>
-                <span class="info-box-number">50000</span>
+                <span class="info-box-text">Available Limit</span>
+                <span class="info-box-number">20000</span>
               </div>
               <!-- /.info-box-content -->
             </div>
