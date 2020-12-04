@@ -15,7 +15,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
 
-@NamedQueries({
+@NamedQueries(value = {
 	@NamedQuery(name = "getAllCourse_pojo", query = "select c from Course c"),
 	@NamedQuery(name = "getAllcourse_pojo_like_java", query = "select c from Course c where id="+1000)
 })

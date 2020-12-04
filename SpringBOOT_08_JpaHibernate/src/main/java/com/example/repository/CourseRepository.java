@@ -3,6 +3,7 @@ package com.example.repository;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.slf4j.Logger;
@@ -38,14 +39,10 @@ public class CourseRepository {
 
 	}
 
-	
 	public void deleteById(Long id) {
 		Course course = findById(id);
 		em.remove(course);
 	}
-	
-	
-	
 	
 	public void jpql_basics() {
 		List list = em.createQuery("select c from Course c").getResultList();
@@ -71,9 +68,41 @@ public class CourseRepository {
 	}
 	
 	
+	//statement = select * from login where email ="abc@gmail.com" and passwod ="abcdefgg" or 1=1;
+	//select * from login where email = ? and password = ?
+	
+	
 	public void jpql_where_java() {
 		TypedQuery<Course> courseType = em.createNamedQuery("getAllcourse_pojo_like_java",Course.class);
 		List<Course> list = courseType.getResultList();
 		logger.info("List Using JPQL Typed Query >>>> "+list);
+	}
+	
+	public void jpql_native() {
+		Query query=em.createNativeQuery("select * from course",Course.class);
+		List list = query.getResultList();
+		logger.info("jpql_native >>>>"+list);
+	}
+	
+	
+	public void jpql_native_with_param() {
+		Query query=em.createNativeQuery("select * from course where id = ?",Course.class);
+		query.setParameter(1, 1000L);
+		List list = query.getResultList();
+		logger.info("jpql_native_with_param >>>>"+list);
+	}
+	
+	public void jpql_native_with_named_parameter() {
+		Query query=em.createNativeQuery("select * from course where id = :id",Course.class);
+		query.setParameter("id", 1000L);
+		List list = query.getResultList();
+		logger.info("jpql_native_with_named_parameter >>>>"+list);
+	}
+	
+	// native query will use for mass update
+	public void jpql_native_with_mass_update() {
+		Query query=em.createNativeQuery("select course set last_updated_date = sysdate()",Course.class);
+		int result =query.executeUpdate();
+		logger.info("jpql_native_with_mass_update >>>>"+result);
 	}
 }
