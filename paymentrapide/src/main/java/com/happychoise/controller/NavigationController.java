@@ -30,5 +30,32 @@ public class NavigationController {
 	public String navTopayment() {
 		return "payment";
 	}
+	
+	@RequestMapping("/payToMerchantInStore")
+	public String navToinStorePurchase() {
+		return "payToMerchantInStore";
+	}
+		
+	
+	@RequestMapping("/dashboardMerchant")
+	public String navToindexMerchant() {
+		return "indexMerchant";
+	}
 
+	@RequestMapping("/merchPayToMerchant")
+	public String navTomerchPayToMerchant() {
+		return "merchPayToMerchant";
+	}
+	
+	@RequestMapping("/payToMerchantOnline")
+	public String navTopayToMerchantOnline() {
+		return "payToMerchantOnline";
+	}
+	
+	@RequestMapping("/payToMerchantPurchaseHistory")
+	public String navTopayToMerchantPurchaseHistory() {
+		return "payToMerchantPurchaseHistory";
+	}
+	
+		
 }

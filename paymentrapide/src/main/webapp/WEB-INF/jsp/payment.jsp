@@ -6,7 +6,7 @@
 		<div class="container-fluid">
 			<div class="row mb-2">
 				<div class="col-sm-6">
-					<h1 class="m-0">Payment</h1>
+					<h1 class="m-0">Pay EMI</h1>
 				</div>
 				<!-- /.col -->
 			</div>
@@ -26,16 +26,9 @@
 					<!-- Custom Tabs -->
 					<div class="card">
 						<div class="card-header d-flex p-0">
-							<h3 class="card-title p-3" style="color: green">
-								Total Limit : 50000 <i class="fas fa-rupee-sign"></i>
-							</h3>
-							<h3 class="card-title p-3">|</h3>
-							<h3 class="card-title p-3" style="color: red">
-								Available Limit : 20000 <i class="fas fa-rupee-sign"></i>
-							</h3>
 							<ul class="nav nav-pills ml-auto p-2">
 								<li class="nav-item"><a class="nav-link active"
-									href="#tab_1" data-toggle="tab">Current Statement</a></li>
+									href="#tab_1" data-toggle="tab">Current Month Statement</a></li>
 								<li class="nav-item"><a class="nav-link" href="#tab_2"
 									data-toggle="tab">Balance History</a></li>
 								<li class="nav-item"><a class="nav-link" href="#tab_3"
@@ -63,8 +56,9 @@
 												<td>2020121234</td>
 												<td>iPhone 12 mini(1/6)</td>
 												<td>5000</td>
-												<td><button type="button"
-														class="btn btn-xs btn-success btn-flat">Pay</button></td>
+												<td>
+													<a class="btn btn-block bg-gradient-success btn-flat btn-xs" href="#tab_3" data-toggle="tab"> Make Payment</a></li>
+												</td>
 											</tr>
 										</tbody>
 									</table>
@@ -146,6 +140,7 @@
 								<div class="tab-pane" id="tab_3">
 									<div class="row col-md-12">
 										<!-- ############################################################# -->
+										<div class="col-md-3"></div>
 										<div class="col-md-6">
 										<div class="card card-warning">
 										<div class="card-header">
@@ -155,9 +150,9 @@
 															<div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
 																<!-- Credit card form tabs -->
 																<ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
-																	<li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit Debit Card </a> </li>
-																	<li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fab fa-paypal mr-2"></i> Paypal </a> </li>
+																	<li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i class="fas fa-credit-card mr-2"></i> Credit / Debit Card </a> </li>
 																	<li class="nav-item"> <a data-toggle="pill" href="#net-banking" class="nav-link "> <i class="fas fa-mobile-alt mr-2"></i> Net Banking </a> </li>
+																	<li class="nav-item"> <a data-toggle="pill" href="#paypal" class="nav-link "> <i class="fas fa-credit-card"></i> Autodebit </a> </li>
 																</ul>
 															</div> <!-- End -->
 															<!-- Credit card form content -->
@@ -195,10 +190,13 @@
 															</div> <!-- End -->
 															<!-- Paypal info -->
 															<div id="paypal" class="tab-pane fade pt-3">
-																<h6 class="pb-2">Select your paypal account type</h6>
-																<div class="form-group "> <label class="radio-inline"> <input type="radio" name="optradio" checked> Domestic </label> <label class="radio-inline"> <input type="radio" name="optradio" class="ml-5">International </label></div>
-																<p> <button type="button" class="btn btn-primary "><i class="fab fa-paypal mr-2"></i> Log into my Paypal</button> </p>
-																<p class="text-muted"> Note: After clicking on the button, you will be directed to a secure gateway for payment. After completing the payment process, you will be redirected back to the website to view details of your order. </p>
+																<!-- <h6 class="pb-2">Select your choice account type</h6> -->
+																<div class="form-group "> <label class="radio-inline"> 
+																	<input type="radio" name="optradio" checked> Salary Account</label> 
+																	<label class="radio-inline"> 
+																	<!-- <input type="radio" name="optradio" class="ml-5">Bank</label> --></div>
+																<p> <button type="button" class="btn btn-primary "><i class="fas fa-credit-card"></i> Opt for auto debit</button> </p>
+																<p class="text-muted"> Note: User EMI will be deducted from next month of salary... </p>
 															</div> <!-- End -->
 															<!-- bank transfer info -->
 															<div id="net-banking" class="tab-pane fade pt-3">
@@ -226,29 +224,6 @@
 										</div>
 
 										<!-- ############################################################# -->
-
-										<div class="col-sm-6">
-											<div class="card card-success">
-												<div class="card-header">
-													<h3 class="card-title">Pay to Merchant</h3>
-													
-													
-													
-													
-													
-												</div>
-												<!-- /.card-header -->
-												<div class="card-body">
-													<div class="row">
-													
-													
-													
-													</div>
-												</div>
-												<!-- /.card-body -->
-											</div>
-											<!-- /.card -->
-										</div>
 										
 										<!-- ############################################################# -->
 									</div>

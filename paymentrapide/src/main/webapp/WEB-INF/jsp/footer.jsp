@@ -1,8 +1,8 @@
 <body>
  <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2019-2020 <a href="https://www.globalpaymentsinc.com/">Global Payment Inc.</a>.</strong>
-    All rights reserved.
+    <strong>Developed by<a href="#"> Paiement Rapide 2019-2020</a>.</strong>
+    
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> 1.0.0-rc
     </div>
@@ -64,6 +64,16 @@
       "autoWidth": false,
       "responsive": true,
     });
+  });
+</script>
+
+<script>
+  $(function () {
+    $("#example4").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example4_wrapper .col-md-6:eq(0)');
+    
   });
 </script>
 

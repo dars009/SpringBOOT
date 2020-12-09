@@ -1,4 +1,4 @@
-<%@include file="header.jsp"%>
+<%@include file="headerMerchant.jsp"%>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -12,11 +12,7 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-	
-	<sql:query dataSource="${webappDataSource}" var="result">
- 		SELECT * FROM paymentrapide.profile where id=<%=useridheder%>;
-	</sql:query>
-	
+
     <!-- Main content -->
     <section class="content">
       <div class="container-fluid">
@@ -25,10 +21,10 @@
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-coins"></i></span>
-<c:forEach var="row" items="${result.rows}">
+				
 			  <div class="info-box-content">
-                <span class="info-box-text">Allocated Limit</span>
-                <span class="info-box-number">${row.allocated_limit}</span>
+                <span class="info-box-text">Monthly Purchase Amount</span>
+                <span class="info-box-number">500000</span>
               </div>
               
               <!-- /.info-box-content -->
@@ -41,8 +37,8 @@
               <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-diagnoses"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Used Limit</span>
-                <span class="info-box-number">${row.used_limit} </span>
+                <span class="info-box-text">Today's Purchase Amount</span>
+                <span class="info-box-number">30000</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -58,8 +54,8 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Available Limit</span>
-                <span class="info-box-number">${row.available_limit}</span>
+                <span class="info-box-text">Monthly Transaction Volume</span>
+                <span class="info-box-number">3589</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -71,15 +67,14 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-file-invoice"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Current EMI</span>
-                <span class="info-box-number">${row.emi_current_month}</span>
+                <span class="info-box-text">Today's Transaction Volume</span>
+                <span class="info-box-number">05</span>
               </div>
               <!-- /.info-box-content -->
             </div>
             <!-- /.info-box -->
           </div>
           <!-- /.col -->
-</c:forEach>
         </div>
         <!-- /.row -->
         
@@ -87,7 +82,7 @@
             <!-- TABLE: LATEST ORDERS -->
             <div class="card">
               <div class="card-header border-transparent">
-                <h3 class="card-title">Orders History</h3>
+                <h3 class="card-title">Latest Orders</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
@@ -113,21 +108,59 @@
                     <tbody>
                     <tr>
                       <td><a href="pages/examples/invoice.html">OR9842</a></td>
-                      <td>iPhone 6s 64 GB</td>
+                      <td>Call of Duty IV</td>
                       <td><span class="badge badge-success">Shipped</span></td>
-                      <td><span class="badge badge-success">Trending</span></td>
+                      <td>
+                        <span class="badge badge-danger">Non-Trending</span>
+                      </td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">OR1848</a></td>
                       <td>Samsung Smart TV</td>
                       <td><span class="badge badge-warning">Pending</span></td>
-                      <td><span class="badge badge-info">Non Trending</span></td>
+                      <td>
+                        <span class="badge badge-success">Trending</span>
+                      </td>
                     </tr>
                     <tr>
                       <td><a href="pages/examples/invoice.html">OR7429</a></td>
-                      <td>iPhone 7 Plus</td>
-                      <td><span class="badge badge-danger">Delivered</span></td>
-                      <td><span class="badge badge-success">Trending</span></td>
+                      <td>iPhone 6 Plus</td>
+                      <td><span class="badge badge-success">Delivered</span></td>
+                      <td>
+                        <span class="badge badge-success">Trending</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                      <td>Samsung Smart TV</td>
+                      <td><span class="badge badge-info">Processing</span></td>
+                      <td>
+                        <span class="badge badge-success">Trending</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR1848</a></td>
+                      <td>Samsung Smart TV</td>
+                      <td><span class="badge badge-warning">Pending</span></td>
+                      <td>
+                         <span class="badge badge-success">Trending</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR7429</a></td>
+                      <td>iPhone 6 Plus</td>
+                      <td><span class="badge badge-success">Delivered</span></td>
+                      <td>
+                         <span class="badge badge-success">Trending</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><a href="pages/examples/invoice.html">OR9842</a></td>
+                      <td>Call of Duty IV</td>
+                      <td><span class="badge badge-success">Shipped</span></td>
+                      <td>
+                         <span class="badge badge-danger">Non-Trending</span>
+                      </td>
                     </tr>
                     </tbody>
                   </table>
@@ -136,7 +169,6 @@
               </div>
               <!-- /.card-body -->
               <div class="card-footer clearfix">
-                <a href="javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
                 <a href="javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
               </div>
               <!-- /.card-footer -->
@@ -170,7 +202,7 @@
                     </div>
                     <div class="product-info">
                       <a href="javascript:void(0)" class="product-title">Samsung TV
-                        <span class="badge badge-warning float-right">1800</span></a>
+                        <span class="badge badge-warning float-right">$1800</span></a>
                       <span class="product-description">
                         Samsung 32" 1080p 60Hz LED Smart HDTV.
                       </span>
@@ -183,7 +215,7 @@
                     </div>
                     <div class="product-info">
                       <a href="javascript:void(0)" class="product-title">Bicycle
-                        <span class="badge badge-info float-right">700</span></a>
+                        <span class="badge badge-info float-right">$700</span></a>
                       <span class="product-description">
                         26" Mongoose Dolomite Men's 7-speed, Navy Blue.
                       </span>
@@ -197,7 +229,7 @@
                     <div class="product-info">
                       <a href="javascript:void(0)" class="product-title">
                         Xbox One <span class="badge badge-danger float-right">
-                        350
+                        $350
                       </span>
                       </a>
                       <span class="product-description">
@@ -212,7 +244,7 @@
                     </div>
                     <div class="product-info">
                       <a href="javascript:void(0)" class="product-title">PlayStation 4
-                        <span class="badge badge-success float-right">399</span></a>
+                        <span class="badge badge-success float-right">$399</span></a>
                       <span class="product-description">
                         PlayStation 4 500GB Console (PS4)
                       </span>
@@ -234,3 +266,5 @@
   <!-- /.content-wrapper -->
 
  <%@include file="footer.jsp"%>
+
+ 

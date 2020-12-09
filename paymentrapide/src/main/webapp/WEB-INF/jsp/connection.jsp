@@ -11,7 +11,7 @@
 
 <body>
 	<sql:setDataSource var="webappDataSource" driver="com.mysql.cj.jdbc.Driver"
-		   url="jdbc:mysql://localhost:3306/paymentrapide" 
+		   url="jdbc:mysql://localhost:3306/paymentrapide?useSSL=false" 
 		   user="root"	
 		   password="root"/>
 	<c:set var="webappDataSource" scope="request"  />
