@@ -7,7 +7,6 @@
 			<div class="row mb-2">
 				<div class="col-sm-6">
 					<h1 class="m-0">Shopping</h1>
-					<div style="color: green" class="col-sm-12 text-center">${Message}</div>
 				</div>
 				<!-- /.col -->
 			</div>

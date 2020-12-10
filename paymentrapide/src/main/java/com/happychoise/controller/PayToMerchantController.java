@@ -2,6 +2,8 @@ package com.happychoise.controller;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -22,6 +24,8 @@ public class PayToMerchantController {
 	@RequestMapping(value = "/payToMerchant", method = RequestMethod.POST)
 	public ModelAndView payToMerchant(HttpServletRequest request, HttpServletResponse response) {
 		String message = null;
+		int useddlimit=0;
+		int availablelimit=0;
 		try {
 			Connection con = ConnectionUtil.getConnection();
 			PreparedStatement stmt = con.prepareStatement(
@@ -33,6 +37,34 @@ public class PayToMerchantController {
 			stmt.setInt(5, Integer.parseInt(request.getParameter("amount")));
 			int rs = stmt.executeUpdate();
 			if(rs>0) {
+				try {
+					try {
+						Connection selectlimit = ConnectionUtil.getConnection();
+						PreparedStatement stmtforselectlimit = selectlimit.prepareStatement("select	" + 
+								"sum(order_amount) as usedlimit, (prof.allocated_limit - sum(ord.order_amount)) as finalAvailablelimit " + 
+								"from paymentrapide.order ord, paymentrapide.profile prof where ord.id=?");
+								stmtforselectlimit.setInt(1, Integer.parseInt(request.getParameter("userid")));
+								ResultSet limit=stmtforselectlimit.executeQuery();
+								while(limit.next()) {
+									useddlimit = limit.getInt(1);
+									availablelimit=limit.getInt(2);
+								}
+						} catch (Exception e) {
+							System.out.println("Error while fetching limits from profile table");
+						}
+							
+					Connection con1 = ConnectionUtil.getConnection();
+					PreparedStatement stmtforupdateprofile = con1.prepareStatement("update paymentrapide.profile set used_limit = ? , available_limit = ? where id= ? ");
+					
+					stmtforupdateprofile.setInt(1, useddlimit);
+					stmtforupdateprofile.setInt(2, availablelimit);
+					stmtforupdateprofile.setInt(3, Integer.parseInt(request.getParameter("userid")));
+					stmtforupdateprofile.executeUpdate();
+					con1.close();
+				
+				} catch (Exception e) {
+					System.out.println("Error while updating limits");
+				}
 				message = "Congratulations! Your order placed successfully..!";
 				request.setAttribute("Message", message);   
 				HttpSession session = request.getSession(false);
@@ -50,13 +82,11 @@ public class PayToMerchantController {
 	}
 	
 	
-	
-	
-	
-	
 	@RequestMapping(value = "/payToMerchantOnline", method = RequestMethod.POST)
 	public ModelAndView payToMerchantOnline(HttpServletRequest request, HttpServletResponse response) {
 		String message = null;
+		int useddlimit=0;
+		int availablelimit=0;
 		try {
 			Connection con = ConnectionUtil.getConnection();
 			PreparedStatement stmt = con.prepareStatement(
@@ -69,6 +99,35 @@ public class PayToMerchantController {
 			stmt.setInt(6, Integer.parseInt(request.getParameter("emi_tenure")));
 			int rs = stmt.executeUpdate();
 			if(rs>0) {
+				try {
+					try {
+						Connection selectlimit = ConnectionUtil.getConnection();
+						PreparedStatement stmtforselectlimit = selectlimit.prepareStatement("select	" + 
+								"sum(order_amount) as usedlimit, (prof.allocated_limit - sum(ord.order_amount)) as finalAvailablelimit " + 
+								"from paymentrapide.order ord, paymentrapide.profile prof where ord.id=?");
+								stmtforselectlimit.setInt(1, Integer.parseInt(request.getParameter("userid")));
+								ResultSet limit=stmtforselectlimit.executeQuery();
+								while(limit.next()) {
+									useddlimit = limit.getInt(1);
+									availablelimit=limit.getInt(2);
+								}
+						} catch (Exception e) {
+							System.out.println("Error while fetching limits from profile table");
+						}
+							
+					Connection con1 = ConnectionUtil.getConnection();
+					PreparedStatement stmtforupdateprofile = con1.prepareStatement("update paymentrapide.profile set used_limit = ? , available_limit = ? where id= ? ");
+					
+					stmtforupdateprofile.setInt(1, useddlimit);
+					stmtforupdateprofile.setInt(2, availablelimit);
+					stmtforupdateprofile.setInt(3, Integer.parseInt(request.getParameter("userid")));
+					stmtforupdateprofile.executeUpdate();
+					con1.close();
+				
+				} catch (Exception e) {
+					System.out.println("Error while updating limits");
+				}
+				
 				message = "Congratulations! Your order placed successfully..!";
 				request.setAttribute("Message", message);   
 				HttpSession session = request.getSession(false);
