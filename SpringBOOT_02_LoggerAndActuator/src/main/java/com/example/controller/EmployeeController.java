@@ -6,17 +6,21 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.beans.Employee;
+import com.example.constants.EmployeeConstunts;
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping(EmployeeConstunts.EMPLOYEE_BASE_URL)
 public class EmployeeController {
 
-	@GetMapping("/getEmployee")
-	public String getEmplpoyee() {
+	@PostMapping("/getEmployee")
+	public String getEmplpoyee(@RequestParam(value = "city") String kkk) {
+		System.out.println(kkk);
 		return "Hello Employee";
 	}
 
@@ -30,8 +34,10 @@ public class EmployeeController {
 	}
 
 	/*
-	 * IND -> MH -> Pune, Nagpur, Mumbai IND -> GJ -> Rajkot, Baroda, Ahmedabad IND
-	 * -> RJ -> Jaipur IND -> Delhi -> null
+	 * IND  -> MH -> Pune, Nagpur, Mumbai  
+	 * IND	-> GJ -> Rajkot, Baroda, Ahmedabad 
+	 * IND  -> RJ -> Jaipur 
+	 * IND  -> Delhi -> null
 	 */
 
 	@GetMapping("/getIndCities")
@@ -40,22 +46,28 @@ public class EmployeeController {
 		mhcity.add("Pune");
 		mhcity.add("Nagpur");
 		mhcity.add("Mumbai");
+		
 		List<String> gjcity = new ArrayList<String>();
 		gjcity.add("Rajkot");
 		gjcity.add("Baroda");
 		gjcity.add("Ahmedabad");
+		
 		List<String> rjcity = new ArrayList<String>();
 		rjcity.add("Ajmer");
 		rjcity.add("Jaipur");
+		
 		List<String> delhicity = new ArrayList<String>();
 		delhicity.add(null);
+		
 		HashMap<String, List<String>> indstate = new HashMap<>();
 		indstate.put("MH", mhcity);
 		indstate.put("GJ", gjcity);
 		indstate.put("RJ", rjcity);
 		indstate.put("DEL", delhicity);
+		
 		Map<String, HashMap<String, List<String>>> country = new HashMap<String, HashMap<String, List<String>>>();
 		country.put("IND", indstate);
+		
 		return country;
 	}
 
