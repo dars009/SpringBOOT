@@ -15,7 +15,7 @@ import com.example.beans.Employee;
 import com.example.constants.EmployeeConstunts;
 
 @RestController
-@RequestMapping(EmployeeConstunts.EMPLOYEE_BASE_URL)
+@RequestMapping("/employee")
 public class EmployeeController {
 
 	@PostMapping("/getEmployee")
