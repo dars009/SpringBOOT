@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.beans.Employee;
-import com.example.constants.EmployeeConstunts;
 
 @RestController
 @RequestMapping("/employee")
