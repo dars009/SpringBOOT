@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/SpringBOOT_01_Demo/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_02_LoggerAndActuator/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_03_Hateoas/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_04_CrudRepository/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_05_ExceptionHandling/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_05_ExceptionHandling/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_06_AOP/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_06_AOP/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_07_Security/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_07_Security/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/SpringBOOT_08_JpaHibernate/src/main/java" charset="UTF-8" />
+  </component>
+</project>

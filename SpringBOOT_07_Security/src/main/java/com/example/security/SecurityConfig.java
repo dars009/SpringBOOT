@@ -14,14 +14,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/customer").hasAnyRole("ADMIN").anyRequest()
-				.authenticated().and().httpBasic();
+		http.
+		csrf().
+		disable().
+		authorizeRequests().
+		antMatchers("/customer").hasAnyRole("ADMIN").
+		anyRequest().
+		authenticated().
+		and().
+		httpBasic();
 	}
 
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		PasswordEncoder encoder = PasswordEncoderFactories.createDelegatingPasswordEncoder();
-		auth.inMemoryAuthentication().withUser("admin").password(encoder.encode("admin")).roles("ADMIN");
+		auth.
+		inMemoryAuthentication().
+		withUser("admin").password(encoder.encode("admin")).roles("ADMIN");
 
 	}
 

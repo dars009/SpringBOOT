@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringBOOT_07_Security" />
+        <module name="SpringBOOT_05_ExceptionHandling" />
+        <module name="SpringBOOT_01_Demo" />
+        <module name="SpringBOOT_08_JpaHibernate" />
+        <module name="SpringBOOT_03_Hateoas" />
+        <module name="SpringBOOT_04_CrudRepository" />
+        <module name="SpringBOOT_02_LoggerAndActuator" />
+        <module name="SpringBOOT_06_AOP" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SpringBOOT_01_Demo" target="1.8" />
+      <module name="SpringBOOT_02_LoggerAndActuator" target="1.8" />
+      <module name="SpringBOOT_03_Hateoas" target="1.8" />
+      <module name="SpringBOOT_04_CrudRepository" target="1.8" />
+      <module name="SpringBOOT_05_ExceptionHandling" target="1.8" />
+      <module name="SpringBOOT_05_ExceptionHandling (1)" target="1.8" />
+      <module name="SpringBOOT_06_AOP" target="1.8" />
+      <module name="SpringBOOT_07_Security" target="1.8" />
+      <module name="SpringBOOT_08_JpaHibernate" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="SpringBOOT_01_Demo" options="-parameters" />
+      <module name="SpringBOOT_02_LoggerAndActuator" options="-parameters" />
+      <module name="SpringBOOT_03_Hateoas" options="-parameters" />
+      <module name="SpringBOOT_04_CrudRepository" options="-parameters" />
+      <module name="SpringBOOT_05_ExceptionHandling" options="-parameters" />
+      <module name="SpringBOOT_05_ExceptionHandling (1)" options="-parameters" />
+      <module name="SpringBOOT_06_AOP" options="-parameters" />
+      <module name="SpringBOOT_07_Security" options="-parameters" />
+      <module name="SpringBOOT_08_JpaHibernate" options="-parameters" />
+    </option>
+  </component>
+</project>

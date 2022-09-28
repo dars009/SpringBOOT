@@ -10,8 +10,8 @@ public class ExcecptionHandler {
 
 	@ExceptionHandler(value = EmployeeNotFoundException.class)
 	public ResponseEntity<Object> exception(EmployeeNotFoundException exception){
-		return new ResponseEntity<Object>(exception.getErrorMessage(), HttpStatus.NOT_FOUND);
-		
+		//return new ResponseEntity<Object>(exception.getErrorMessage(), HttpStatus.NOT_FOUND);
+		return new ResponseEntity<Object>(exception.getErrorMessage(), HttpStatus.NOT_FOUND);	
 	}
 	
 	

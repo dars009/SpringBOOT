@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/SpringBOOT.iml" filepath="$PROJECT_DIR$/.idea/SpringBOOT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBOOT_01_Demo/SpringBOOT_01_Demo.iml" filepath="$PROJECT_DIR$/SpringBOOT_01_Demo/SpringBOOT_01_Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBOOT_02_LoggerAndActuator/SpringBOOT_02_LoggerAndActuator.iml" filepath="$PROJECT_DIR$/SpringBOOT_02_LoggerAndActuator/SpringBOOT_02_LoggerAndActuator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBOOT_03_Hateoas/SpringBOOT_03_Hateoas.iml" filepath="$PROJECT_DIR$/SpringBOOT_03_Hateoas/SpringBOOT_03_Hateoas.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBOOT_04_CrudRepository/SpringBOOT_04_CrudRepository.iml" filepath="$PROJECT_DIR$/SpringBOOT_04_CrudRepository/SpringBOOT_04_CrudRepository.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBOOT_05_ExceptionHandling/SpringBOOT_05_ExceptionHandling.iml" filepath="$PROJECT_DIR$/SpringBOOT_05_ExceptionHandling/SpringBOOT_05_ExceptionHandling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBOOT_06_AOP/SpringBOOT_06_AOP.iml" filepath="$PROJECT_DIR$/SpringBOOT_06_AOP/SpringBOOT_06_AOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBOOT_07_Security/SpringBOOT_07_Security.iml" filepath="$PROJECT_DIR$/SpringBOOT_07_Security/SpringBOOT_07_Security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringBOOT_08_JpaHibernate/SpringBOOT_08_JpaHibernate.iml" filepath="$PROJECT_DIR$/SpringBOOT_08_JpaHibernate/SpringBOOT_08_JpaHibernate.iml" />
+    </modules>
+  </component>
+</project>

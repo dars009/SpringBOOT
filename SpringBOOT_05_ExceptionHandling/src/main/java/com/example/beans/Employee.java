@@ -19,11 +19,9 @@ public class Employee {
 	private double salary;
 
 	public Employee() {
-		super();
 	}
 
 	public Employee(Integer id, String firstName, String lastName, int age, double salary) {
-		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
