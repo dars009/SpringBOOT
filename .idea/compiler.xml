@@ -6,13 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SpringBOOT_07_Security" />
         <module name="SpringBOOT_05_ExceptionHandling" />
-        <module name="SpringBOOT_01_Demo" />
-        <module name="SpringBOOT_08_JpaHibernate" />
-        <module name="SpringBOOT_03_Hateoas" />
-        <module name="SpringBOOT_04_CrudRepository" />
-        <module name="SpringBOOT_02_LoggerAndActuator" />
         <module name="SpringBOOT_06_AOP" />
       </profile>
     </annotationProcessing>

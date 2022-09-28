@@ -3,12 +3,6 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/SpringBOOT_01_Demo/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBOOT_02_LoggerAndActuator/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBOOT_03_Hateoas/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBOOT_04_CrudRepository/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBOOT_07_Security/pom.xml" />
-        <option value="$PROJECT_DIR$/SpringBOOT_08_JpaHibernate/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBOOT_05_ExceptionHandling/pom.xml" />
         <option value="$PROJECT_DIR$/SpringBOOT_06_AOP/pom.xml" />
       </list>
