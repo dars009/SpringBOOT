@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.hateoas.Link;
-import org.springframework.hateoas.server.mvc.ControllerLinkBuilder;
+import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -73,7 +73,7 @@ public class EmployeeController {
 		list.add(employee2);
 		list.add(employee3);
 		
-		Link link = ControllerLinkBuilder.linkTo(Employee.class).slash(employee.getName()).slash(employee.getCity()).withSelfRel();
+		Link link = WebMvcLinkBuilder.linkTo(Employee.class).slash(employee.getName()).slash(employee.getCity()).withSelfRel();
 		
 		employee.add(link);
 		
