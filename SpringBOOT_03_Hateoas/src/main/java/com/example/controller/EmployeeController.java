@@ -73,9 +73,11 @@ public class EmployeeController {
 		list.add(employee2);
 		list.add(employee3);
 		
-		Link link = WebMvcLinkBuilder.linkTo(Employee.class).slash(employee.getName()).slash(employee.getCity()).withSelfRel();
+		Link link = WebMvcLinkBuilder.linkTo(Employee.class).slash("employee").slash("getAllEmployee").withRel("For Get All Employee");
+		Link link1 = WebMvcLinkBuilder.linkTo(Employee.class).slash("employee").slash("deleteEmployee").slash("{id}").withRel("For Delete Employee");
 		
 		employee.add(link);
+		employee.add(link1);
 		
 		return list;
 	}

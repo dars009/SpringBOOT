@@ -3,8 +3,6 @@ package com.example.controller;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.websocket.server.PathParam;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +21,8 @@ import com.example.model.EmployeeResponse;
 @RequestMapping("/employee")
 public class EmployeeController {
 
-	@GetMapping("/getEmployee")
+
+	@GetMapping(value = "/getEmployee")
 	public String getEmplpoyee() {
 		return "Hello Employee";
 	}
