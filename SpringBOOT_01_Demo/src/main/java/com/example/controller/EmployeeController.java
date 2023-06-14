@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,6 @@ import com.example.model.EmployeeResponse;
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
-
 
 	@GetMapping(value = "/getEmployee")
 	public String getEmplpoyee() {
@@ -49,20 +49,27 @@ public class EmployeeController {
 		list.add("Ritesh");
 		return list;
 	}
-	
+
 	@PostMapping("/saveEmployee")
 	public ResponseEntity<EmployeeResponse> saveEmployee(@RequestBody Employee emp) {
-		EmployeeResponse er= new EmployeeResponse(emp.getName(), emp.getCity(), emp.getPhone());
+		EmployeeResponse er = new EmployeeResponse(emp.getName(), emp.getCity(), emp.getPhone());
 		return new ResponseEntity<EmployeeResponse>(er, HttpStatus.CREATED);
 	}
-	
+
 	@GetMapping("/getEmployeeHeader")
-	public void getEmployeeToken(
-			@RequestHeader("token") String token,
-			@RequestHeader("version") String version) {
-		
+	public void getEmployeeToken(@RequestHeader("token") String token, @RequestHeader("version") String version) {
+
 		System.out.println(token);
 		System.out.println(version);
+	}
+
+	@GetMapping("/getAllEmployee")
+	public List<Employee> getAllEmployee() {
+		return Arrays.asList(
+				new Employee(1, "Suraj", "Pune", "9999999999"),
+				new Employee(2, "Ram", "Pune", "9999999999"),
+				new Employee(4, "Darshit", "Pune", "9999999999"),
+				new Employee(19, "Avani", "Pune", "9999999999"));
 	}
 
 }

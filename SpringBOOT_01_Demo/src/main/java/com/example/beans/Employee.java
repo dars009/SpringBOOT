@@ -1,14 +1,19 @@
 package com.example.beans;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+// shorting data manner
+@JsonPropertyOrder({"city","name"})
 public class Employee {
 	
 	@JsonIgnore
 	private Integer id;
-	//@JsonProperty("fullname")
+	// alternate name 
+	@JsonProperty("fullname")
 	private String name;
+	@JsonAlias("usercity")
 	private String city;
 	private String phone;
 	
