@@ -67,6 +67,7 @@ public class EmployeeController {
 		Employee employee1 = new Employee(2, "Ayush", "Pune", "000333000");
 		Employee employee2 = new Employee(3, "Darshit", "Ambegaon", "0444000000");
 		Employee employee3 = new Employee(4, "Adi", "Sinhgad", "000044400");
+		
 		List<Employee> list = new ArrayList<Employee>();
 		list.add(employee);
 		list.add(employee1);
@@ -74,7 +75,7 @@ public class EmployeeController {
 		list.add(employee3);
 		
 		Link link = WebMvcLinkBuilder.linkTo(Employee.class).slash("employee").slash("getAllEmployee").withRel("For Get All Employee");
-		Link link1 = WebMvcLinkBuilder.linkTo(Employee.class).slash("employee").slash("deleteEmployee").slash("{id}").withRel("For Delete Employee");
+		Link link1 = WebMvcLinkBuilder.linkTo(Employee.class).slash("employee").slash("deleteEmployee").slash("id").withRel("For Delete Employee");
 		
 		employee.add(link);
 		employee.add(link1);
