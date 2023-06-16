@@ -2,26 +2,25 @@ package com.example.entity;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.Table;
-
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-@Entity
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
+import jakarta.persistence.Table;
 
+@Entity
 @NamedQueries(value = {
 	@NamedQuery(name = "getAllCourse_pojo", query = "select c from Course c"),
 	@NamedQuery(name = "getAllcourse_pojo_like_java", query = "select c from Course c where id="+1000)
 })
 
 //@NamedQuery(name = "getAllCourse_pojo", query = "select c from Course c")
-//@Table(name="courseDetail") //"COURSE_TABLE"//can use for diffrent name of table in db
+@Table//(name="courseDetail") //"COURSE_TABLE"//can use for diffrent name of table in db
 public class Course {
 
 	@Id
